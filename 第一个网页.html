@@ -1,106 +1,123 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>zjs</title>
-    <style>  
-      body {
-        margin: 0;
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width" />
+  <title>FLEX 布局</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+      body{
+          margin: 0; /* 外边距 */
+          height: 100vh; /* 高度 */
+          background-color: rgb(190, 190, 190);/*背景 */
       }
-    </style>
-  </head>
-  <body>
+      /* * {边框
+          border: 1px solid black;
+      } */
+      .flex {
+          display: flex;
+          /* 使用弹性布局 */
+      }
+      .white {
+          background-color: white;
+          /* 颜色 */
+      }
+      .flex1 {
+          flex: 1;
+          /* 水平边框 */
+      }
+      .column {
+          flex-direction: column;
+          /* 垂直边框 */
+      }
+      .mgl8 {
+        /* 左边距 */
+           margin: 8px;
+      }
+      .mgr8{
+        /* 右边距 */
+           margin-right: 8px;
+      }
+      .mgt8{
+        /* 上边距 */
+           margin-top: 8px;
+      }
 
-     <div style="
-       background-color: #f1f1f1;
-       text-align: center;
-       padding: 0px;
-     ">
-       <img src="https://i.imgs.ovh/2025/09/19/7LtZbY.jpeg" 
-       alt="雪山.jpeg" 
-       width="1250" 
-       border="0">
-     </div>
+      @media (max-width: 600px){
+        .phoneCebian{
+          display: none;
+        }   
+        .phoneNeirong{
+         flex-direction: column;
+        }
+        .shuxiangphoneNeirong{
+         flex-direction: column;
+        }
+      }
+  </style>
+</head>
 
-     <div style="
-       background-color: lightblue;
-       padding: 1px;
-       font-size: 20px
-       max-width: 700px;
-     ">
-     <p>设置网页块的属性：
-     </p>
-     </div>
-     
-     <div style="
-       background-color: lightgreen;
-       text-align: center;
-       padding: 10px;
-       max-width: none;
-       margin: 0px auto;
-       line-height: 1.7;
-     ">
-     <p>
-       div style="<br>
-       background-color: 背景色;<br>
-       text-align: 文本位置;<br>
-       padding: 上下边距单位px;<br>
-       margin: 距离上下其他盒子px;<br>
-       line-height: 文字行高;<br>
-       max-width: 左右宽px;<br>
-     "</p>
-     </div>
-
-     <div style="
-       background-color: lightblue;
-       padding: 1px;
-       font-size: 20px
-       max-width: none;
-     ">
-     <p>插入网页链接<br>
-     </p>
-     </div>
-
-     <div style="
-       background-color: lightgreen;
-       padding: 1px;
-       font-size: 20px
-       max-width: 700px;
-       text-align: center;
-     ">
-     <p>
-        a href="网址"描述<br>
-        p 文本
-     </p>
-     </div>
-
-     <div style="
-       background-color: #f1f1f1;
-       text-align: center;
-       padding: 20px;
-       font-size: 12px;
-     ">
-     <p>参考网站</p>
-     <a href="https://space.bilibili.com/692534243?spm_id_from=333.788.0.0">我的Bilili</a><br>
-     <a href="https://www.runoob.com/">HTML菜鸟教程</a>
-     </div>
-
-     <div style="
-        text-align: center;
-        padding: 0px;
-        margin: 10px;
-        line-height: normal;
-        max-width: none;
-    ">
-       <iframe src="https://www.bilibili.com/video/BV1RV411C77w/?spm_id_from=333.337.search-card.all.click&vd_source=f6fc336fabeb2b6811caacb2735e9c69" 
-       width="1250" 
-       height="760">
-       </iframe>
-     </div>
+<body class="flex">
+  <!-- 侧边栏 -->
+  <div style="width: 200px; z-index: 2" class="white">
+    <!-- 头像栏 -->
+    <div 
+        class="flex"
+        style="
+               padding: 10px;
+               align-items: center;
+               justify-content: center;
+               border-bottom: 1px solid #999;
+               "
+    >
+      <img 
+          src="https://pic.baike.soso.com/ugc/baikepic2/2165/20200601205405-1599682926_jpeg_377_298_19202.jpg/300" 
+          width="100px"
+          height="100px"
+          alt=""
+      />
+      <div style="margin-left: 0px;">石家庄学院</div>
+    </div>
+  </div>
+  <!-- 主区域 -->
+  <div class="flex1 flex column">
+    <!-- 头部栏 -->
+    <div style="height: 60px; z-index: 2" class="white">
+      
+      
+    </div>
 
 
-
-
-      </body>
+    <!-- 内容区 -->
+    <div  style="overflow: auto;" class="flex1 flex">
+      <!-- 左区 -->
+      <div style="flex: 3" class="flex column mgl8 mgt8">
+        <!-- 数据区 -->
+        <div class="flex shuxiangphoneNeirong">
+          <!-- 数据块 -->
+          <div style="height: 100px" class="flex1 white mgr8"></div>
+          <div style="height: 100px" class="flex1 white mgr8"></div>
+          <div style="height: 100px" class="flex1 white mgr8"></div>
+          <div style="height: 100px" class="flex1 white mgr8"></div>
+        </div>
+        <!-- 列表区 -->
+        <div class="flex column">
+             <!-- 列表项 -->
+             <div style="height: 160px" class="white mgt8"></div>            </div>
+             <div style="height: 160px" class="white mgt8"></div>
+             <div style="height: 160px" class="white mgt8"></div>
+             <div style="height: 160px" class="white mgt8"></div>
+        </div>
+      <!-- 右区 -->
+      <div style="flex: 1" class="flex column mgr8 mgt8">
+        <!-- 提示区 -->
+        <div style="height: 150px" class="white mgt8"></div>
+        <!-- 消息区 -->
+        <div style="height: 300px" class="white mgt8"></div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
